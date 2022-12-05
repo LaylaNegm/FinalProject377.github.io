@@ -8,7 +8,7 @@
   */
   
   html {
-    background-color: rgb(27, 145, 175);
+    background-color: rgba(169, 169, 169, 0.75);
     font-size: 16px;
     min-width: 300px;
     overflow-x: hidden;
@@ -135,7 +135,7 @@
   }
   
   .right_section {
-    background-color: rgba(246, 25, 142, 0.7);
+    background-color: rgba(169, 169, 169, 0.5);
     flex: 1 2 auto;
     margin: 1rem;
     align-items: center;

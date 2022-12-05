@@ -92,7 +92,7 @@
     /* this will push other blocks out of the way */
   
     /* colors */
-    background-color: rgb(10, 210, 83);
+    background-color: rgb(141, 115, 2);
     color: #eb6d07;
   
     /* shapes */
@@ -135,7 +135,7 @@
   }
   
   .right_section {
-    background-color: rgba(33, 203, 30, 0.12);
+    background-color: rgba(197, 194, 41, 0.12);
     flex: 1 2 auto;
     margin: 1rem;
     align-items: center;

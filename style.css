@@ -264,12 +264,6 @@
     /* Pick a good border colour and check out how it works with your buttons */
   }
   
-  .prev:hover,
-  .next:hover {
-    /* Pick a good background colour for your hover pseudoclass */
-  }
-  
-  
   /*
   Form Styles
   */

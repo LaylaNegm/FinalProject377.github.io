@@ -8,7 +8,7 @@
 */
 
 html {
-  background-color: rgb(9, 202, 166);
+  background-color: rgb(219, 249, 244);
   font-size: 16px;
   min-width: 300px;
   overflow-x: hidden;
@@ -30,7 +30,7 @@ body {
   font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’, ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
   font-weight: 400;
   line-height: 1.5;
-  background-color: rgb(26, 188, 161);
+  background-color: rgb(230, 253, 255);
 }
 
 
@@ -46,7 +46,7 @@ h2, h3 {
 }
 
 form {
-  accent-color: hsla(224, 81%, 48%, 0.482);
+  accent-color: hsla(217, 81%, 48%, 0.456);
 }
 
 /*
@@ -92,8 +92,8 @@ form {
   /* this will push other blocks out of the way */
 
   /* colors */
-  background-color: rgb(4, 242, 250);
-  color: #840497;
+  background-color: rgb(139, 139, 174);
+  color: #FAFAFA;
 
   /* shapes */
   border-radius: 6px;
@@ -103,7 +103,7 @@ form {
 
 
   /* box-shadows are fancy */
-  box-shadow: 0 0.5em 1em -0.125em rgba(245, 3, 3, 0.1), 0 0 0 1px rgb(10 10 10 / 2%);
+  box-shadow: 0 0.5em 1em -0.125em rgba(186, 165, 255, 0.1), 0 0 0 1px rgb(10 10 10 / 2%);
 }
 
 
@@ -117,7 +117,7 @@ form {
 */
 
 .box {
-  background-color: rgba(29, 15, 230, 0.4);
+  background-color: rgba(242, 254, 255, 0.4);
   border: 2px dashed;
   border-radius: 4px;
 
@@ -128,14 +128,14 @@ form {
 }
 
 .left_section {
-  background-color: rgba(166, 4, 235, 0.8);
+  background-color: rgba(154, 212, 214, 0.8);
   flex: 0 1 auto;
   margin: 1rem;
   padding: 1.5rem;
 }
 
 .right_section {
-  background-color: rgba(246, 25, 142, 0.7);
+  background-color: rgba(219, 203, 216, 0.7);
   flex: 1 2 auto;
   margin: 1rem;
   align-items: center;
@@ -154,7 +154,7 @@ form {
 .footer {
   flex-shrink: 0;
   padding: 1rem;
-  background-color: rgba(2, 255, 255, 0.8);
+  background-color: rgba(16, 25, 53, 0.8);
   font-size: 1.2rem;
   font-weight: 600;
 }

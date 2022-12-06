@@ -329,6 +329,11 @@ form label {
   width: 80px;
   height: 80px;
 }
+
+.lds-hourglass_hidden{
+  display: hidden;
+}
+
 .lds-hourglass:after {
   content: " ";
   display: block;

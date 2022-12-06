@@ -21,7 +21,7 @@ function getRandomIntInclusive(min, max) {
   
   function injectHTML(list) {
     console.log('fired injectHTML');
-    const target = document.querySelector('#restaurant_list');
+    const target = document.querySelector('#school_list');
     target.innerHTML = '';
   
     const listEl = document.createElement('ol');
@@ -48,8 +48,8 @@ function getRandomIntInclusive(min, max) {
     */
   }
   
-  function processRestaurants(list) {
-    console.log('fired restaurants list');
+  function processSchools(list) {
+    console.log('fired schools list');
     const range = [...Array(15).keys()];
     const newArray = range.map((item) => {
       const index = getRandomIntInclusive(0, list.length);
@@ -112,6 +112,14 @@ function getRandomIntInclusive(min, max) {
       }
     });
   }
+
+  async function getData() {
+    const url = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
+    const data = await fetch(url);
+    const json = await data.json();
+    const reply = json.filter((item) => Boolean(item.geocoded_column_1)).filter((item) => Boolean(item.name));
+    return reply;
+  }
   
   async function mainEvent() {
     /*
@@ -123,8 +131,8 @@ function getRandomIntInclusive(min, max) {
     const pageMap = initMap();
     // the async keyword means we can make API requests
     const form = document.querySelector('.main_form'); // get your main form so you can do JS with it
-    const submit = document.querySelector('#get-resto'); // get a reference to your submit button
-    const loadAnimation = document.querySelector('.lds-ellipsis');
+    const submit = document.querySelector('#get-school'); // get a reference to your submit button
+    const loadAnimation = document.querySelector('.lds-hourglass');
     submit.style.display = 'none'; // let your submit button disappear
   
     /*
@@ -132,36 +140,19 @@ function getRandomIntInclusive(min, max) {
         This next line goes to the request for 'GET' in the file at /server/routes/foodServiceRoutes.js
         It's at about line 27 - go have a look and see what we're retrieving and sending back.
        */
-    const results = await fetch('/api/foodServicePG');
-    const arrayFromJson = await results.json(); // here is where we get the data from our request as JSON
   
-    /*
-        Below this comment, we log out a table of all the results using "dot notation"
-        An alternate notation would be "bracket notation" - arrayFromJson["data"]
-        Dot notation is preferred in JS unless you have a good reason to use brackets
-        The 'data' key, which we set at line 38 in foodServiceRoutes.js, contains all 1,000 records we need
-      */
-    console.table(arrayFromJson.data);
-  
-    // in your browser console, try expanding this object to see what fields are available to work with
-    // for example: arrayFromJson.data[0].name, etc
-    console.log(arrayFromJson.data[0]);
-  
-    // this is called "string interpolation" and is how we build large text blocks with variables
-    console.log(
-      `${arrayFromJson.data[0].name} ${arrayFromJson.data[0].category}`
-    );
+    const mapData = await getData();
   
     // This IF statement ensures we can't do anything if we don't have information yet
-    if (!arrayFromJson.data?.length) { return; }
+    if (!mapData?.length) { return; }
   
     let currentList = [];
   
     submit.style.display = 'block';
   
     // let's hide our load button now that we have some data to manipulate
-    loadAnimation.classList.remove('lds-ellipsis');
-    loadAnimation.classList.add('lds-ellipsis_hidden');
+    loadAnimation.classList.remove('lds-hourglass');
+    loadAnimation.classList.add('lds-hourglass_hidden');
   
     form.addEventListener('input', (event) => {
       console.log('input', event.target.value);
@@ -177,7 +168,7 @@ function getRandomIntInclusive(min, max) {
       submitEvent.preventDefault();
   
       // This constant will have the value of your 15-restaurant collection when it processes
-      currentList = processRestaurants(arrayFromJson.data);
+      currentList = processSchools(mapData);
       // console.log(currentList);
   
       // And this function call will perform the "side effect" of injecting the HTML list for you
@@ -195,5 +186,5 @@ function getRandomIntInclusive(min, max) {
       It's calling the 'mainEvent' function at line 57
       It runs first because the listener is set to when your HTML content has loaded
     */
-  document.addEventListener('DOMContentLoaded', async () => mainEvent()); // the async keyword means we can make API requests
+  document.addEventListener('DOMContentLoaded', async () => mainEvent());
   

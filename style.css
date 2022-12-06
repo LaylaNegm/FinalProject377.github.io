@@ -92,8 +92,8 @@ form {
   /* this will push other blocks out of the way */
 
   /* colors */
-  background-color: rgb(139, 139, 174);
-  color: #FAFAFA;
+  background-color: rgb(254, 101, 79);
+  color: #F8F4F9;
 
   /* shapes */
   border-radius: 6px;
@@ -117,7 +117,7 @@ form {
 */
 
 .box {
-  background-color: rgba(242, 254, 255, 0.4);
+  background-color: rgba(254, 101, 79, 0.4);
   border: 2px dashed;
   border-radius: 4px;
 
@@ -128,14 +128,14 @@ form {
 }
 
 .left_section {
-  background-color: rgba(154, 212, 214, 0.8);
+  background-color: rgba(242, 187, 5, 0.8);
   flex: 0 1 auto;
   margin: 1rem;
   padding: 1.5rem;
 }
 
 .right_section {
-  background-color: rgba(219, 203, 216, 0.7);
+  background-color: rgba(125, 206, 130, 0.7);
   flex: 1 2 auto;
   margin: 1rem;
   align-items: center;
@@ -154,7 +154,7 @@ form {
 .footer {
   flex-shrink: 0;
   padding: 1rem;
-  background-color: rgba(16, 25, 53, 0.8);
+  background-color: rgb(254, 101, 79);
   font-size: 1.2rem;
   font-weight: 600;
 }
@@ -311,61 +311,46 @@ form label {
     }
 }
 
+/* MAP STYLES */
+#map {
+  display: block;
+  width: 400px;
+  height: 380px;
+  border: 2px dashed rgb(99,99,99);
+  margin-bottom: 1rem;
+}
+
 /* 
     pure CSS data loading icon
 */
-
-.lds-heart {
+.lds-hourglass {
   display: inline-block;
   position: relative;
   width: 80px;
   height: 80px;
-  transform: rotate(45deg);
-  transform-origin: 40px 40px;
 }
-.lds-heart div {
-  top: 32px;
-  left: 32px;
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  background: #fff;
-  animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-.lds-heart div:after,
-.lds-heart div:before {
+.lds-hourglass:after {
   content: " ";
-  position: absolute;
   display: block;
-  width: 32px;
-  height: 32px;
-  background: #fff;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-hourglass 1.2s infinite;
 }
-.lds-heart div:before {
-  left: -24px;
-  border-radius: 50% 0 0 50%;
-}
-.lds-heart div:after {
-  top: -24px;
-  border-radius: 50% 50% 0 0;
-}
-@keyframes lds-heart {
+@keyframes lds-hourglass {
   0% {
-    transform: scale(0.95);
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
-  5% {
-    transform: scale(1.1);
-  }
-  39% {
-    transform: scale(0.85);
-  }
-  45% {
-    transform: scale(1);
-  }
-  60% {
-    transform: scale(0.95);
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   }
   100% {
-    transform: scale(0.9);
+    transform: rotate(1800deg);
   }
 }

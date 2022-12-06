@@ -18,7 +18,7 @@
       <header class="header">
         <h1>Final Project Draft 1</h1>
       </header>
-      <div class="container box">
+      <div class="container">
         <div class="left_section box">
             <h3>Search for Highschools here!</h3>
           <form action="/api">
@@ -26,14 +26,15 @@
             <label for="school"></label>
             <input type="text" name="school" id="school" />
             </div>
-            <div class="lds-heart"><div></div></div>
+            <div class="lds-hourglass"></div>
             <button type="submit">Search</button>
           </form>
         </div>
         <div class="right_section box ">
           <h3>PG county high speed internet Highschools</h3>
-          <div class="Highschool_list box">
-            A list of PG county Highschools with high speed internet
+          <div id="map" class ="box"></div>
+          <div class="box" id="school list">
+            A map of PG county Highschools with high speed internet
           </div>
         </div>
       </div>

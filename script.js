@@ -105,7 +105,7 @@ function getRandomIntInclusive(min, max) {
     });
   
     array.forEach((item, index) => {
-      const {coordinates} = item.geocoded_column_1;
+      const {coordinates} = item.location_1;
       L.marker([coordinates[1], coordinates[0]]).addTo(map);
       if (index === 0) {
         map.setView([coordinates[1], coordinates[0]], 10);
@@ -114,10 +114,10 @@ function getRandomIntInclusive(min, max) {
   }
 
   async function getData() {
-    const url = 'https://data.princegeorgescountymd.gov/resource/vkdv-rvfx.json';
+    const url = 'https://data.princegeorgescountymd.gov/resource/bzf2-94qx.json';
     const data = await fetch(url);
     const json = await data.json();
-    const reply = json.filter((item) => Boolean(item.geocoded_column_1)).filter((item) => Boolean(item.name));
+    const reply = json.filter((item) => Boolean(item.location_1)).filter((item) => Boolean(item.name));
     return reply;
   }
   

@@ -3,43 +3,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Final project draft</title>
+    <title>Final Project draft 1</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
      crossorigin=""/>
     <link rel="stylesheet" href="style.css" />
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-    crossorigin=""></script>
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
   </head>
   <body>
     <div class="wrapper">
       <header class="header">
-        <h1>Final Project Draft 1</h1>
+        <h1>Final Project draft 1</h1>
       </header>
       <div class="container">
         <div class="left_section box">
-            <h3>Search for Highschools here!</h3>
-          <form action="/api">
+            <h3>Search here</h3>
+          <form action="/api" class="box main_form">
             <div>
-            <label for="school"></label>
-            <input type="text" name="school" id="school" />
+            <label for="stat">station name</label>
+            <input type="text" name="stat" id="stat" />
             </div>
             <div class="lds-hourglass"></div>
-            <button type="submit" id="get-school">submit</button>
+            <button type="submit" id="get-stat">Submit</button>
           </form>
         </div>
-        <div class="right_section box ">
-          <h3>PG county high speed internet Highschools</h3>
-          <div id="map" class ="box"></div>
-          <div class="box" id="school_list">
-            A map of PG county Highschools with high speed internet
+        <div class="right_section box">
+          <h3>Stations Map</h3>
+          <div id="map"></div>
+          <div class="box" id="station_list">
+            A list of fire stations from an API
           </div>
         </div>
       </div>
-      <footer class = "footer">
-        <p>check out the dataset here! <a href="shorturl.at/bfnvG" target="_blank" rel="noopener noreferrer">click me!</a></p>
+      <footer class = "footer"> 
+        check out the data set here:
+            <a href="https://data.princegeorgescountymd.gov/Public-Safety/County-Fire-Stations/bzf2-94qx" target="_blank" rel="noopener noreferrer"> click me !</a>
       </footer>
     </div>
     <script src="./script.js"></script>

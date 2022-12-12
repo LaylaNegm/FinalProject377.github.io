@@ -49,7 +49,7 @@ list.forEach((item) => {
 }
 
 function processStations(list) {
-  console.log('fired station list');
+  console.log('fire station list');
   const range = [...Array(15).keys()];
   const newArray = range.map((item) => {
     const index = getRandomIntInclusive(0, list.length);
@@ -115,7 +115,7 @@ function markerPlace(array, map) {
    // const converlng = L.latLng(newlng)
     console.log(newlat, newlng);
    // console.log(converlat, converlng);
-    const marker = L.marker(newlatlng).addTo(map); 
+    const marker = L.marker(newlatlng).addTo(map).bindPopup(item.station_name); 
     if (index === 0) {
       map.setView([latitude, longitude], 10);
     }
